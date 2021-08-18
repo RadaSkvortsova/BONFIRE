@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BONFIRE</title>
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/uikit.min.css" />
+		<link rel="stylesheet" href="css/slidenav.min.css" />
+		<link rel="stylesheet" href="css/dotnav.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/notify.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700,900" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/uikit.min.js"></script>
+		<script type="text/javascript" src="js/notify.min.js"></script>
+		<script type="text/javascript" src="js/slideset.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+<body>
+<header>
+	
+	<div class="header-top">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-2-3 uk-text-right wind">
+					start selling your products or buy them from anywhere!
+				</div>
+				<div class="uk-width-1-3 uk-text-right">
+					<i class="uk-icon-close (alias)" id="close"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-middle uk-container uk-container-center">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-1-3 languages">
+					<img src="images/usa.png">
+					<span>usd</span>
+					<i class="uk-icon-sort-down (alias)"></i>
+				</div>
+				<div class="uk-width-1-3 bonfire uk-text-center">bonfire </div>
+				<div class="uk-width-1-3">
+					<div class="uk-grid">
+						<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-1-1">
+
+						</div>
+						<!-- корзина -->
+						<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-1-1 uk-text-center "  ><a href="#" class="bascet-button" id="go">Cart (3bascet)</a> </div>
+					</div>
+				</div>
+			</div>
+			<!-- корзина -->
+			<div id="modal_form" >
+				<span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
+                <form method="post" action="/netcat/modules/netshop/actions/cart.php">
+                    <input type="hidden" name="redirect_url" value="/cart/">
+                    <input type="hidden" name="cart_mode" value="">
+                    <table class="uk-table uk-table-divider table basket">
+                        <thead>
+                        <tr>
+                            <th>number</th>
+                            <th>photo</th>
+                            <th>product</th>
+                            <th>Price</th>
+                            <th>amount</th>
+                            <th>sum</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody class="uk-table-middle">
+                        <tr>
+                            <td class="textsmall">1.</td>
+                            <td>
+                                <a class="tpl-link-more" href="#">
+                                    <img class="img-modal" src="images/3.jpg">
+                                </a>
+                            </td>
+                            <td>Honey Beige<span></span>
+                            </td>
+                            <td class="textsmall cart-price">
+                                <span >38</span>$
+                            </td>
+                            <td>
+                                <div class="uk-flex uk-flex-between uk-flex-bottom buy-button">
+                                    <div class="add-item">
+                                        <div class="add-item-minus" data-item="product-0">-</div>
+                                        <input class="product-plus" type="text" name="bread" value="100">
+                                        <div class="add-item-plus" data-item="product-0">+</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="textlarge"><span class="b-price-num">3800</span><span class="b-price-rub">$</span></td>
+                            <td>
+                                <button class="delete-cart" title="Удалить из корзины" type="submit" name="cart[165][1]" value="0">
+                                    <img src="images/delete.png" <="" button="">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="first-row">
+                            <td class="textsmall">2.</td>
+                            <td>
+                                <a class="tpl-link-more" href="#">
+                                    <img class="img-modal" src="images/1.jpg">
+                                </a>
+                            </td>
+                            <td>Vivienne Sabo Cabaret Premiere <span></span>
+                            </td>
+                            <td class="textsmall cart-price">
+                                <span>75</span>$
+                            </td>
+                            <td>
+                                <div class="uk-flex uk-flex-between uk-flex-bottom buy-button">
+                                    <div class="add-item">
+                                        <div class="add-item-minus" data-item="product-0">-</div>
+                                        <input class="product-plus" type="text" name="bread" value="10">
+                                        <div class="add-item-plus" data-item="product-0">+</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="textlarge"><span class="b-price-num">750</span><span class="b-price-rub">$</span></td>
+                            <td>
+                                <button class="delete-cart" title="Удалить из корзины" type="submit" name="cart[165][1]" value="0">
+                                    <img src="images/delete.png" <="" button="">
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="uk-flex uk-flex-middle uk-flex-right uk-margin-bottom">
+                        <div> <button type="submit" class="recount">Recount</button></div>
+                        <div class="uk-margin-left uk-margin-right uk-text-uppercase value-order">Order cost:</div>
+                        <div><span class="value-order">5800</span> $</div>
+                    </div>
+                </form>
+			</div>
+			<div id="overlay"></div><!-- Пoдлoжкa -->
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-1-4">
+					<div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+						<a href="#" id="nav"><i class="uk-icon-bars"></i></a>
+
+						<div class="uk-dropdown" >
+							<div class="menu" id="menu">
+								<a href="#" class="menu__link menu__link--active">
+									Home
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+					      <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+					    </svg>
+								</a><br>
+								<a href="#" class="menu__link">
+									About
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+					      <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+					    </svg>
+								</a><br>
+								<a href="#" class="menu__link">
+									Projects
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+					      <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+					    </svg>
+								</a><br>
+								<a href="#" class="menu__link">
+									Contact
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+					      <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+					    </svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="uk-width-2-4 list-menu">
+					<div class="button-mobil">
+						<button class="uk-button" data-uk-offcanvas="{target:'#my-id'}">HOME</button>
+
+						<!-- This is the off-canvas sidebar -->
+						<div id="my-id" class="uk-offcanvas">
+							<div class="uk-offcanvas-bar">
+								<ul>
+									<li class="menu-item"><a href="#">MEN</a></li>
+									<li class="menu-item"><a href="#">WOMEN</a></li>
+									<li class="menu-item"><a href="#">LOOKBOOK</a></li>
+									<li class="menu-item"><a href="#">ABOUT</a></li>
+									<li class="menu-item"><a href="#">BLOG</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="uk-grid menu-padding">
+						<div class="uk-width-1-6">
+							<a href="">Home</a>
+						</div>
+						<div class="uk-width-1-6">
+							<div class="uk-button-dropdown " data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+
+								<a href=""> Men </a>
+								<i class="uk-icon-sort-down (alias)"></i>
+								<div class="color-background uk-dropdown background-color uk-dropdown-bottom" style="top: 30px; left: 0px;">
+									<ul class="uk-nav uk-nav-dropdown">
+										<li><a href="#">For dish washing</a></li>
+										<li><a href="#">Floor cleaning</a></li>
+										<li><a href="#">For kitchen and plumbing</a></li>
+										<li><a href="#">For washing</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="uk-width-1-6">
+							<div class=" uk-button-dropdown" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+								<a href="">woMen   </a>
+								<i class="uk-icon-sort-down (alias)"></i>
+								<div class="uk-dropdown color-background uk-dropdown-bottom" style="top: 30px; left: 0px;">
+									<ul class="uk-nav uk-nav-dropdown">
+										<li><a href="#">For dish washing</a></li>
+										<li><a href="#">Floor cleaning</a></li>
+										<li><a href="#">For kitchen and plumbing</a></li>
+										<li><a href="#">For washing</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="uk-width-1-6">
+							<a href=""> lookbook  </a>
+						</div>
+						<div class="uk-width-1-6">
+							<a href="">about    </a>
+						</div>
+						<div class="uk-width-1-6">
+							<a href="">blog </a>
+						</div>
+
+					</div>
+
+
+				</div>
+				<div class="uk-width-1-4 search-container">
+					<span class="favorites">0</span>
+					<i class="uk-icon-heart-o heart-top"></i>
+					<i class="uk-icon-search search"></i>
+					<input type="text" name="search" class="input-search">
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<section class="shop">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-1-1 uk-text-center discover">Discover & shop</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-1 uk-text-center discover">the trend</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-1 uk-text-center extra">Extra 75% off in Winter Sale</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-3"></div>
+			<div class="uk-width-1-3 shop-now uk-text-center">
+				<a class="catalog-button" href="#">shop now</a>
+			</div>
+			<div class="uk-width-1-3"></div>
+		</div>
+	</div>
+</section>
+<section class="catalog">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-1-2 uk-text-center">
+				<div class="lookbook">
+					New year<br>
+					<span>lookbook</span><br>
+					<a class="catalog-button" href="#">view collection</a>
+				</div>
+			</div>
+			<div class="uk-width-1-2">
+				<div class="catalog-right">
+					<div class="uk-grid">
+						<div class="uk-width-1-1">
+							<div class="winter-sale">
+								winter sale<br>
+								<span>60% off</span>
+							</div>
+
+						</div>
+					</div>
+					<div class="uk-grid">
+						<div class="uk-width-1-1 uk-text-right">
+							<div class="spring-summer">
+								Spring <span class="summer">summer</span><br>
+								<span>shop men</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="featured-products">
+	<div class="uk-container uk-container-center">
+		<div class="featured-caption">
+			featured products
+		</div>
+		<div data-uk-slideset="{small: 2, medium: 3, large: 4}">
+			<div class="uk-slidenav-position">
+				<ul class="uk-grid uk-slideset">
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/1.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="new-tape">
+								<img src="images/new.png">
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/2.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/3.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="featured-img-container">
+							<a href="#"><img class="featured-img" src="images/4.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/14.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="new-tape">
+								<img src="images/new.png">
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/6.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/15.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="featured-img-container">
+							<a href="#"><img class="featured-img" src="images/img/17.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+				<a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
+			</div>
+			<ul class="uk-slideset-nav uk-dotnav uk-flex-center">...</ul>
+		</div>
+	</div>
+</section>
+<section class="best-sellers">
+	<div class="uk-container uk-container-center">
+		<div class="sellers-caption">
+			best sellers
+		</div>
+		<div data-uk-slideset="{small: 2, medium: 3, large: 4}">
+			<div class="uk-slidenav-position">
+				<ul class="uk-grid uk-slideset">
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/2.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/3.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/1.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="new-tape">
+								<img src="images/new.png">
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="featured-img-container">
+							<a href="#"><img class="featured-img" src="images/4.jpg"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/8.png"></a>
+							<div class="new-tape">
+								<img src="images/new.png">
+							</div>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/11.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class=" featured-img-container">
+							<a href="#"><img class="featured-img" src="images/12.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="featured-img-container">
+							<a href="#"><img class="featured-img" src="images/9.png"></a>
+							<div class="best-hover">
+								<div class="heart-tovar">
+									<i class="uk-icon-heart-o heart "></i>
+								</div>
+								<div class="size">
+									xs    s    M    L    XL    XXL
+								</div>
+								<div class="add-cart">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-2-3">
+									<a href="#"><span class="minimal">Minimal top</span><br>
+										<span class="shirt">Men,  Shirt</span></a>	<br>
+									<div class="price-margin">
+										<span class="old-price">$112.92 </span>
+										<span class="price">$ 80.75 </span>
+									</div>
+								</div>
+								<div class="uk-width-1-3">
+
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+				<a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
+			</div>
+			<ul class="uk-slideset-nav uk-dotnav uk-flex-center">...</ul>
+		</div>
+	</div>
+</section>
+<section class="product-sales">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-1-1 product-sales-caption uk-text-center">product Sales</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-1 product-sales-desc uk-text-center">
+				Welcome to the new range of shaving products from master barber. We have over<br> three decades of experience in the male grooming industry.
+			</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-1 uk-text-center">
+				<a class="product-sales-button" href="#">discover more</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="fresh-stories">
+	<div class="uk-container uk-container-center">
+		<div class="fresh-caption">
+			fresh stories
+		</div>
+		<div class="uk-grid padding-hr">
+			<div class="uk-width-large-1-3 uk-width-medium-1-3 uk-width-small-1-1">
+				<div class="uk-grid">
+					<div class="uk-width-1-2 rel">
+						<a href="#"><img class="fresh-stories-img" src="images/10.png"></a>
+						<div class="month">
+							<img src="images/aug.png">
+						</div>
+					</div>
+					<div class="uk-width-1-2 catrt-desc">
+						<a href="#"><p>By Alex goodman</p><br>
+							<div class="fashion">
+								<p>Top 10 Fashion
+									Trends for 2015</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-large-1-3 uk-width-medium-1-3 uk-width-small-1-1">
+				<div class="uk-grid">
+					<div class="uk-width-1-2 rel">
+						<a href="#"><img class="fresh-stories-img" src="images/11.png"></a>
+						<div class="month">
+							<img src="images/jan.png">
+						</div>
+					</div>
+					<div class="uk-width-1-2 catrt-desc">
+						<a href="#"><p>By Alex goodman</p><br>
+							<div class="fashion">
+								<p>Top 10 Fashion
+									Trends for 2015</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-large-1-3 uk-width-medium-1-3 uk-width-small-1-1">
+				<div class="uk-grid">
+					<div class="uk-width-1-2 rel">
+						<a href="#"><img class="fresh-stories-img" src="images/12.png"></a>
+						<div class="month">
+							<img src="images/feb.png">
+						</div>
+					</div>
+					<div class="uk-width-1-2 catrt-desc">
+						<p>By Alex goodman</p><br>
+						<a href="#">
+							<div class="fashion">
+								<p>Top 10 Fashion
+									Trends for 2015</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uk-grid brend">
+			<div class="uk-width-1-4">
+				<img src="images/king.png">
+			</div>
+			<div class="uk-width-1-4">
+				<img src="images/pulp.png">
+			</div>
+			<div class="uk-width-1-4">
+				<img src="images/dolge.png">
+			</div>
+			<div class="uk-width-1-4">
+				<img src="images/el.png">
+			</div>
+		</div>
+	</div>
+</section>
+<section class="choice-catalog">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-1-4">
+				<div class="choice-catalog-caption">new Products</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="choice-catalog-caption">On Sale</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="choice-catalog-caption">featured products</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="choice-catalog-caption">top rated</div>
+			</div>
+		</div>
+		<div class="uk-grid border-choice">
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/6.jpg">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/7.jpg">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/8.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/9.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uk-grid border-choice">
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/10.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/11.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/12.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/13.jpg">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uk-grid">
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/14.jpg">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/15.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/1.jpg">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-1-4">
+				<div class="uk-grid">
+					<div class="uk-width-1-3">
+						<img src="images/2.png">
+					</div>
+					<div class="uk-width-2-3">
+						<a href="#">
+							<span class="minimal">DARTED t-shirt</span><br>
+							<span class="choice-catalog-price">$120.00</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+</section>
+<footer>
+	<div class="footer-top">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-large-1-4 uk-width-medium-1-4 uk-width-small-1-1 logo">
+					<img src="images/logo.png">
+					<div class="logo-desc uk-hidden-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</div>
+					<div class="logo-icon">
+
+						<a href="#" class="uk-icon-hover  uk-icon-facebook"></a>
+						<a href="#" class="uk-icon-hover  uk-icon-twitter"></a>
+						<a href="#" class="uk-icon-hover  uk-icon-dribbble"></a>
+						<a href="#" class="uk-icon-hover  uk-icon-vimeo"></a>
+						<a href="#" class="uk-icon-hover  uk-icon-instagram"></a>
+					</div>
+				</div>
+				<div class="uk-width-large-1-4 uk-width-medium-1-4 uk-hidden-small uk-width-small-1-1">
+					<div class="footer-caption">Information</div>
+					<div class="uk-grid links">
+						<div class="uk-width-1-2">
+							<a href="#">About</a><br>
+							<a href="#">Track Orders</a><br>
+							<a href="#">FAQ</a>
+						</div>
+						<div class="uk-width-1-2">
+							<a href="#">sevices </a><br>
+							<a href="#">Contact </a><br>
+							<a href="#">Portfolio </a>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-large-1-4 uk-width-medium-1-4 uk-hidden-small uk-width-small-1-1">
+					<div class="footer-caption">Tags</div>
+					<div class="uk-grid footer-button">
+						<div class="uk-width-large-1-1 uk-width-medium-1-4">
+							<a href="#">
+								Shirt
+							</a><a href="#">
+							Wordpress
+						</a><a href="#">
+							Art
+						</a><br>
+							<a href="#">
+								Men
+							</a>
+							<a href="#">
+								women
+							</a>
+							<a href="#">
+								RETAIL
+							</a><br>
+							<a href="#">
+								class
+							</a>
+							<a href="#">
+								Business
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-large-1-4 uk-width-medium-1-4 uk-hidden-small uk-width-small-1-1">
+					<div class="footer-caption">newsletter</div>
+					<div class="uk-grid">
+						<div class="uk-width-1-1">
+
+							<form id="form" class="footer-form">
+								<div class="form-group">
+									<input name="name" type="text" id="exampleInputName" placeholder="Your Name">
+								</div>
+								<div class="form-group">
+									<input name="adress" type="text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+								</div>
+
+								<button type="submit" class="btn btn-primary">Subscribe NOW</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-1-2 footer-bottom-desc">
+					Made with Love & Coffee © 2015 Designlazy. All Rights Reserved.
+				</div>
+				<div class="uk-width-1-2 uk-text-right payment-card">
+					<a href="#">
+						<img src="images/vs.png">
+					</a>
+					<a href="#">
+						<img src="images/mk.png">
+					</a>
+					<a href="#">
+						<img src="images/pay.png">
+					</a>
+					<a href="#">
+						<img src="images/disc.png">
+					</a>
+					<a href="#">
+						<img src="images/amazon.png">
+					</a>
+					<a href="#">
+						<img src="images/am.png">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script type="text/javascript" src="js/style.js"></script>
+</body>
+</head>
+</html>

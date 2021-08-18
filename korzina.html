@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>index</title>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <header>
+
+      <div id="my-id" uk-modal>
+        <div class="uk-modal-dialog">
+          <form method="post" action="/netcat/modules/netshop/actions/cart.php">
+            <input type="hidden" name="redirect_url" value="/cart/">
+            <input type="hidden" name="cart_mode" value="">
+          <table class="uk-table uk-table-divider table basket">
+              <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Фото</th>
+                    <th>Товар</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Сумма</th>
+                    <th></th>
+                </tr>
+              </thead>
+               <tbody class="uk-table-middle">
+                    <tr>
+                      <td class="textsmall">1.</td>
+                      <td>
+                          <a class="tpl-link-more" href="#">
+                              <img src="images/chibatta.jpg">
+                          </a>
+                      </td>
+                      <td>Итальянская Чиабатта 280гр<span></span>
+                      </td>
+                      <td class="textsmall">38&nbsp;руб.</td>
+                      <td>
+                        <div class="uk-flex uk-flex-between uk-flex-bottom buy-button">
+                            <div class="add-item">
+                                <div class="add-item-minus" data-item="product-0">-</div>
+                                <input class="product-plus" type="text" name="bread" value="100">
+                                <div class="add-item-plus" data-item="product-0">+</div>
+                            </div>
+                        </div>
+                      </td>
+                      <td class="textlarge"><span class="b-price-num">3800</span><span class="b-price-rub">руб</span></td>
+                      <td>
+                          <button class="delete-cart" title="Удалить из корзины" type="submit" name="cart[165][1]" value="0">
+                              <img src="images/delete.png" <="" button="">
+                        </button>
+                      </td>
+                  </tr>
+                <tr class="first-row">
+                      <td class="textsmall">2.</td>
+                      <td>
+                          <a class="tpl-link-more" href="#">
+                              <img src="images/tradithion.jpg">
+                          </a>
+                      </td>
+                      <td>Батон нарезной «Традиционный» 400гр<span></span>
+                      </td>
+                      <td class="textsmall">75&nbsp;руб.</td>
+                      <td>
+                        <div class="uk-flex uk-flex-between uk-flex-bottom buy-button">
+                            <div class="add-item">
+                                <div class="add-item-minus" data-item="product-0">-</div>
+                                <input class="product-plus" type="text" name="bread" value="10">
+                                <div class="add-item-plus" data-item="product-0">+</div>
+                            </div>
+                        </div>
+                      </td>
+                      <td class="textlarge"><span class="b-price-num">750</span><span class="b-price-rub">руб</span></td>
+                      <td>
+                          <button class="delete-cart" title="Удалить из корзины" type="submit" name="cart[165][1]" value="0">
+                              <img src="images/delete.png" <="" button="">
+                        </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="uk-flex uk-flex-middle uk-flex-right uk-margin-bottom">
+                    <div> <button type="submit" class="recount">Пересчитать</button></div>
+                    <div class="uk-margin-left uk-margin-right uk-text-uppercase value-order">Стоимость заказа:</div>
+                    <div><span class="value-order">5800&nbsp;</span> руб.</div>
+                </div>
+                <div class=".uk-modal-close">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+  </header>
+  <script type="text/javascript" src="css/style.js"></script>
+</body>
+</head>
